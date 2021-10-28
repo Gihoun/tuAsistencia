@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_users",
+  "info": {
+    "name": "appUsers",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fName": {
+      "type": "string",
+      "required": true
+    },
+    "lName": {
+      "type": "string",
+      "required": true
+    },
+    "uMail": {
+      "type": "email",
+      "unique": true,
+      "required": true
+    },
+    "uPass": {
+      "type": "password",
+      "private": true,
+      "required": true
+    },
+    "uBirth": {
+      "type": "date",
+      "required": true
+    },
+    "user_rol": {
+      "model": "user-rol"
+    }
+  }
+}

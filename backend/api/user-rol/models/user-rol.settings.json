@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_rols",
+  "info": {
+    "name": "userRol"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "desc_Rol": {
+      "type": "string"
+    }
+  }
+}
