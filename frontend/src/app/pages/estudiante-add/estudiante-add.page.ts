@@ -12,10 +12,28 @@ import { UsersService } from 'src/app/services/users.service';
 export class EstudianteAddPage implements OnInit {
   Title = 'Formulario de Registro.';
   rol = 2;
-  user: any = [];
-  constructor(private uService: UsersService, private router: Router,public alertCtrl: AlertController) {}
+
+  constructor(
+    private uService: UsersService,
+    private router: Router,
+    public alertCtrl: AlertController
+  ) {}
 
   ngOnInit() {}
+
+  testeoLogin(firstName, lastName, uMail, birth, pass) {
+    if (
+      firstName.value == '' ||
+      lastName.value == '' ||
+      uMail.value == '' ||
+      birth.value == '' ||
+      pass.value == ''
+    ) {
+      this.failCreate();
+    } else {
+      this.addEstudiante(firstName, lastName, uMail, birth, pass);
+    }
+  }
   addEstudiante(firstName, lastName, uMail, birth, pass) {
     this.uService
       .createAlumnos(
@@ -27,16 +45,13 @@ export class EstudianteAddPage implements OnInit {
         this.rol
       )
       .subscribe(
-        (res) =>{
-        this.user = res;
-        if(this.user.fName == ""){
+        (res) => {
+          this.successCreate();
+          this.router.navigate(['/home']);
+        },
+        (err) => {
           this.failCreate();
-      }else {
-        this.successCreate();
-        this.router.navigate(["/home"]);
-      }
-        },             
-        (err) => {this.failCreate();}
+        }
       );
   }
 
@@ -45,7 +60,7 @@ export class EstudianteAddPage implements OnInit {
       cssClass: 'my-custom-class',
       header: 'Exito',
       message: 'Cuenta creada con exito',
-      buttons: ['OK']
+      buttons: ['OK'],
     });
 
     await alert.present();
@@ -56,11 +71,10 @@ export class EstudianteAddPage implements OnInit {
       cssClass: 'my-custom-class',
       header: 'Error!!!',
       message: 'Al enviar el formulario.',
-      buttons: ['OK']
+      buttons: ['OK'],
     });
 
     await alert.present();
     await alert.onDidDismiss();
   }
-
 }
