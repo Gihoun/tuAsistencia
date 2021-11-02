@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { TouchSequence } from 'selenium-webdriver';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class EstudianteAddPage implements OnInit {
   Title = 'Formulario de Registro.';
   rol = 2;
+  user: any = [];
   constructor(private uService: UsersService, private router: Router,public alertCtrl: AlertController) {}
 
   ngOnInit() {}
@@ -25,10 +27,15 @@ export class EstudianteAddPage implements OnInit {
         this.rol
       )
       .subscribe(
-        (res) => {this.successCreate();
-        this.router.navigate(["/home"])
-        },
-             
+        (res) =>{
+        this.user = res;
+        if(this.user.fName == ""){
+          this.failCreate();
+      }else {
+        this.successCreate();
+        this.router.navigate(["/home"]);
+      }
+        },             
         (err) => {this.failCreate();}
       );
   }
