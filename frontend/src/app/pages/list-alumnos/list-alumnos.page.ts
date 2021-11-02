@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class ListAlumnosPage implements OnInit {
   Title = 'Lista de Alumnos';
   // Lista de Alumnos.
   usuarios: any = [];
+
   // Carga de la Lista de alumnos.
   ListAlumnos() {
     this.uService.getAlumnos().subscribe((res) => {
@@ -19,10 +20,41 @@ export class ListAlumnosPage implements OnInit {
     });
   }
 
-  constructor(private uService: UsersService, private navCtrl: NavController) {}
+  constructor(
+    private uService: UsersService,
+    private navCtrl: NavController,
+    public alertCtrl: AlertController
+  ) {}
 
   ngOnInit() {
     this.ListAlumnos();
   }
+  ionViewWillEnter() {
+    this.ListAlumnos();
+  }
 
+  async delAlumno(id: string) {
+    const alert = await this.alertCtrl.create({
+      header: 'Cuidado, eliminara un gran Alumno',
+      message: 'Está seguro?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Eliminar',
+          handler: () => {
+            this.uService.deleteAlumno(id).subscribe(
+              (res) => {
+                location.reload();
+              },
+              (err) => console.log(err)
+            );
+          },
+        },
+      ],
+    });
+    await alert.present();
+  }
 }

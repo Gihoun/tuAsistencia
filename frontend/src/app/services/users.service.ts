@@ -35,8 +35,7 @@ export class UsersService {
     uMail: string,
     uPass: string,
     uBirth: Date,
-    user_rol 
-  
+    user_rol
   ) {
     return this.client.post(this.API, {
       fName,
@@ -44,14 +43,11 @@ export class UsersService {
       uMail,
       uPass,
       uBirth,
-      user_rol
+      user_rol,
     });
   }
-  /* Proximamente
-  deleteEstudiante (id:number){
-    this.usuarios = this.usuarios.filter( usuario =>{
-      return usuario.userId !== id
-    });
-
-  } */
+  //Eliminar alumno
+  deleteAlumno(id: string) {
+    return this.client.delete(`${this.API}/${id}`);
+  }
 }
