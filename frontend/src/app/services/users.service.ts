@@ -7,9 +7,14 @@ import { HttpClient } from '@angular/common/http';
 export class UsersService {
   constructor(private client: HttpClient) {}
 
+  
+
   // Ruta de la API
   API = 'http://localhost:1337/app-users';
-
+  // Ruta libro asistencia.
+  APIAsistencia = 'http://localhost:1337/asistencias';
+ 
+ 
   //METODOS CRUD
 
   //Lista solo de Usuarios con el Rol de alumnos.
@@ -50,4 +55,7 @@ export class UsersService {
   deleteAlumno(id: string) {
     return this.client.delete(`${this.API}/${id}`);
   }
+
+
+
 }

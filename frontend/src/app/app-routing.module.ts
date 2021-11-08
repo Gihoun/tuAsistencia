@@ -39,7 +39,17 @@ const routes: Routes = [
   },
   {
     path: 'estudiante-add',
-    loadChildren: () => import('./pages/estudiante-add/estudiante-add.module').then( m => m.EstudianteAddPageModule)
+    loadChildren: () =>
+      import('./pages/estudiante-add/estudiante-add.module').then(
+        (m) => m.EstudianteAddPageModule
+      ),
+  },
+  {
+    path: 'qrscanner',
+    loadChildren: () =>
+      import('./pages/qrscanner/qrscanner.module').then(
+        (m) => m.QrscannerPageModule
+      ),
   },
 ];
 

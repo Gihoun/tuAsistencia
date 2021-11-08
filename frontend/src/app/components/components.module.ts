@@ -8,6 +8,7 @@ import { ProfileHeaderComponent } from './profile-header/profile-header.componen
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
   declarations: [HomeHeaderComponent,StandarFooterComponent,LoginModalComponent,StandarHeaderComponent,ProfileHeaderComponent],
   imports: [

@@ -11,7 +11,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class DetalleAlumnoPage implements OnInit {
   Title = 'Perfil Alumno';
-  icono = 'back';
+  icono = 'arrow-dropleft';
   usuario: any = [];
   rol: string;
   constructor(

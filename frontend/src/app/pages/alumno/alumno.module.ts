@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { IonicModule } from '@ionic/angular';
-
 import { AlumnoPageRoutingModule } from './alumno-routing.module';
-
 import { AlumnoPage } from './alumno.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 
@@ -15,8 +13,9 @@ import { ComponentsModule } from 'src/app/components/components.module';
     FormsModule,
     IonicModule,
     AlumnoPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    NgxQRCodeModule
   ],
-  declarations: [AlumnoPage]
+  declarations: [AlumnoPage],
 })
 export class AlumnoPageModule {}

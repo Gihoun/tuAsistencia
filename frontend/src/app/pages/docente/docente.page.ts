@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 @Component({
   selector: 'app-docente',
   templateUrl: './docente.page.html',

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "asistencias",
+  "info": {
+    "name": "Asistencia"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "estado": {
+      "type": "boolean"
+    },
+    "dia_clase": {
+      "type": "date"
+    },
+    "app_user": {
+      "model": "app-users",
+      "via": "asistencias"
+    }
+  }
+}

@@ -36,6 +36,10 @@
     },
     "user_rol": {
       "model": "user-rol"
+    },
+    "asistencias": {
+      "via": "app_user",
+      "collection": "asistencia"
     }
   }
 }

@@ -8,21 +8,15 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-label position="stacked">Usuario</ion-label>
-        <ion-input placeholder="Ingrese su Usuario"></ion-input>
-      </ion-item>
-      <ion-item>
         <ion-label position="stacked">Correo</ion-label>
-        <ion-input type="password" placeholder="Ingrese su correo"></ion-input>
+        <ion-input required="true" placeholder="Ingrese su correo" #apellido></ion-input>
       </ion-item>
       <ion-toolbar class="ion-padding-top">
         <ion-text color="medium" class="ion-text-center">
-          <h4>Enviaremos tu nueva contraseña al correo.</h4>
+          <h4>Enviaremos un codigo a tu correo.</h4>
         </ion-text>
       </ion-toolbar>
-      <ion-button shape="round" strong="true" fill="solid" expand="block">
-        Enviar contraseña
-      </ion-button>
+      <ion-button (click)=cargarAlumno(apellido)>Enviarme codigo</ion-button>
       <div class="ion-margin-top"></div>
     </ion-card-content>
   </ion-card>

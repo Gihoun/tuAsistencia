@@ -42,12 +42,12 @@ export class LoginModalComponent implements OnInit {
         this.failLogin();
       } else {
         if (this.userLog[0].user_rol.desc_Rol == 'Alumno') {
-          this.navCtrl.navigateForward(['alumno'], navigationExtras);
+          this.navCtrl.navigateForward(['/alumno'], navigationExtras);
           this.modalCtrl.dismiss();
-        } else if (this.userLog[0].user_rol.desc_Rol == 'Docente'){
-          this.navCtrl.navigateForward(['docente'], navigationExtras);
+        } else if (this.userLog[0].user_rol.desc_Rol == 'Docente') {
+          this.navCtrl.navigateForward(['/docente'], navigationExtras);
           this.modalCtrl.dismiss();
-        } else{
+        } else {
           this.failLogin();
         }
       }
