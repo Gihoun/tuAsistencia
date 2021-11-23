@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "tuasistenciapp",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -20,15 +20,13 @@
     "strapi-plugin-email": "3.6.8",
     "strapi-plugin-upload": "3.6.8",
     "strapi-plugin-i18n": "3.6.8",
-    "strapi-connector-bookshelf": "3.6.8",
-    "knex": "0.21.18",
-    "mysql": "2.18.1"
+    "strapi-connector-mongoose": "3.6.8"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "2e6fa4c5-74fa-4e0f-810b-c4a9f2b5ef46"
+    "uuid": "2470a252-7c2f-4a7c-9c59-9f5d55439feb"
   },
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
