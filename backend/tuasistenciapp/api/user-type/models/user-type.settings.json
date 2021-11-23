@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_types",
+  "info": {
+    "name": "userType",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_rol": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    }
+  }
+}
