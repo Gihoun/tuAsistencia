@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-export interface Usuario{
+// Interface para la modificacionde usaurio.
+export interface Usuario {
   id?: string;
   fName: string;
   lName: string;
@@ -16,14 +17,11 @@ export interface Usuario{
 export class UsersService {
   constructor(private client: HttpClient) {}
 
-  
-
   // Ruta de la API
   API = 'http://localhost:1337/app-users';
   // Ruta libro asistencia.
   APIAsistencia = 'http://localhost:1337/asistencias';
 
- 
   //METODOS CRUD
 
   //Lista solo de Usuarios con el Rol de alumnos.
@@ -65,9 +63,12 @@ export class UsersService {
     return this.client.delete(`${this.API}/${id}`);
   }
   //
-  getUserMail(uMail: string){
-    return this.client.get(this.API + '?uMail=' + uMail)
+  getUserMail(uMail: string) {
+    return this.client.get(this.API + '?uMail=' + uMail);
   }
-  updateUserPass(id: string, usuario: Usuario){
-    return this.client.put(`${this.API}/${id}`, usuario)}
+  updateUserPass(id: string, usuario: Usuario) {
+    return this.client.put(`${this.API}/${id}`, usuario);
+  }
+
+  // scanCreateList(userApp.id: string)
 }

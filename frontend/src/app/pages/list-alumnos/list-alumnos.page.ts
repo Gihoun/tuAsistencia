@@ -32,7 +32,9 @@ export class ListAlumnosPage implements OnInit {
   ionViewWillEnter() {
     this.ListAlumnos();
   }
-
+  ionViewDidEnter(){
+    this.ListAlumnos();
+  }
   async delAlumno(id: string) {
     const alert = await this.alertCtrl.create({
       header: 'Cuidado, eliminara un gran Alumno',
@@ -47,7 +49,7 @@ export class ListAlumnosPage implements OnInit {
           handler: () => {
             this.uService.deleteAlumno(id).subscribe(
               (res) => {
-                location.reload();
+                this.ListAlumnos();
               },
               (err) => console.log(err)
             );

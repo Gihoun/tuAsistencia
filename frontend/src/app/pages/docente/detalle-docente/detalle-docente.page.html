@@ -10,21 +10,23 @@
         />
       </ion-col>
     </ion-row>
-    <ion-row class="ion-text-start">
-      <ion-col>
-        <h4>Nombre: {{usuario.fName}} {{usuario.lName}}</h4>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-text-start">
-      <ion-col>
-        <p style="font-size: large">Email: {{usuario.uMail}}</p>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <p style="font-size: large">Rol: {{rol}}</p>
-      </ion-col>
-    </ion-row>
+    <ion-item lines="none">
+      <h5>Nombre: {{usuario.fName}} {{usuario.lName}}</h5>
+    </ion-item>
+    <ion-item lines="none">
+      <p style="font-size: medium">Email: {{usuario.uMail}}</p>
+    </ion-item>
+    <ion-item lines="none">
+      <p style="font-size: medium">Rol: {{rol}}</p>
+    </ion-item>
+    <ion-item>
+      <p>Fecha Nac:</p>
+      <ion-datetime
+        displayFormat="DD/MM/YYYY"
+        readonly="true"
+        value="{{usuario.uBirth}}"
+      ></ion-datetime>
+    </ion-item>
     <ion-row class="ion-text-justify">
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,

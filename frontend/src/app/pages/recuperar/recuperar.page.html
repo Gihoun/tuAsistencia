@@ -9,15 +9,22 @@
     <ion-card-content>
       <ion-item>
         <ion-label position="stacked">Correo</ion-label>
-        <ion-input required="true" placeholder="Ingrese su correo" #email></ion-input>
+        <ion-input
+          required="true"
+          placeholder="Ingrese su correo"
+          #email
+        ></ion-input>
       </ion-item>
       <ion-toolbar class="ion-padding-top">
         <ion-text color="medium" class="ion-text-center">
           <h4>Modo de Pruebas</h4>
         </ion-text>
       </ion-toolbar>
-      <ion-button (click)=CambiarPass(email)>Restablecer contraseña</ion-button>
-      <div class="ion-margin-top"></div>
+      <div class="ion-margin-top ion-text-center">
+        <ion-button (click)="CambiarPass(email)"
+          >Restablecer contraseña</ion-button
+        >
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

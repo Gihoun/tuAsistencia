@@ -53,7 +53,7 @@ export class RecuperarPage implements OnInit {
           .subscribe(
             (update) => {
               this.crearToast(
-                'Contraseña restablecida, ocupe su fecha de nacimiento como contraseña (dd/MM/yyy)',
+                'Contraseña restablecida, Nueva Contraseña: Fecha Nacimiento formato. "dd/MM/yyy" ',
                 3000
               );
             },
